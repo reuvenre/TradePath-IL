@@ -57,5 +57,11 @@ Vitest 5 requires `@types/node` 22 or 24+; the scaffold shipped 20.
 ### Removed duplicate docs
 `TradePath-IL-curriculum.md` (older than `docs/02-CURRICULUM.md`) and `TradePath-IL-simulator-spec.md` (identical to `docs/10-SIMULATOR.md`) were removed from the repo root. `docs/` is canonical.
 
+### Supabase project
+Hosted project "TradePath IL", ref `weicsmgvsxbwgfprowmf`, region `eu-central-1` (Frankfurt, closest common region to Israel), free plan. `supabase/schema.sql` was applied as migration `initial_schema`. The free plan allows two active projects, so the unused "WhatsApp CRM" project was paused to make room.
+
+### `handle_new_user()` is not executable by API roles
+Supabase's security advisor flagged the `SECURITY DEFINER` sign-up trigger function as callable by `anon` and `authenticated`. `EXECUTE` is revoked from `public`, `anon` and `authenticated` (migration `20261004130000_revoke_handle_new_user_execute.sql`, also folded into `schema.sql` for fresh installs). The trigger still fires.
+
 ### Skills
 `scripts/install-skills.ps1` was not run in Phase 0; `.claude/skills/` does not exist yet. Reuven should run it and review each `SKILL.md` (see `docs/09-SKILLS.md`).

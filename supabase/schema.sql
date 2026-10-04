@@ -22,6 +22,9 @@ begin
   return new;
 end $$;
 
+-- SECURITY DEFINER: only the trigger may run it, never the API roles.
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
