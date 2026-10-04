@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 // Uses the development-only shell preview; the real pages need a Supabase session.
 test.beforeEach(async ({ page }) => {
-  await page.goto("/dev/shell");
+  await page.goto("/dev/today");
 });
 
 test("exactly one main navigation is visible, with the four destinations", async ({ page }) => {

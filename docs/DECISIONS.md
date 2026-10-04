@@ -68,3 +68,47 @@ Supabase's security advisor flagged the `SECURITY DEFINER` sign-up trigger funct
 
 ### Playwright uses the preinstalled Chromium in cloud sessions
 Claude cloud sessions ship Chromium at `/opt/pw-browsers/chromium` and block `playwright install`; its build does not match the headless shell the pinned `@playwright/test` expects. `playwright.config.ts` points `launchOptions.executablePath` at that binary only when it exists (or at `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` if set), so local Windows runs are unchanged. Alternative rejected: pinning `@playwright/test` to the preinstalled build, which would drift as the cloud image updates.
+
+## 2026-10-04 — Phase 1
+
+### `"type": "module"` in package.json
+`content:validate` runs `lib/content/validate.ts` through `tsx`. Without `"type": "module"` tsx compiled the `.ts` files to CommonJS and `require()` of the ESM-only `@mdx-js/mdx` chain (`estree-walker`) failed. The whole package is now ESM; Next, Vitest, Playwright and ESLint all run unchanged. Rejected: Node's built-in type stripping (needs `.ts` extensions in every relative import), renaming `lib/content` to `.mts`.
+
+### MDX pipeline as decided
+`gray-matter` → zod (`lib/content/schemas.ts`) → `next-mdx-remote/rsc` 6.0 (`compileMDX`, peer `react >= 16`, works with React 19.2) with `remark-gfm` for the tables in the reference lessons. The validator parses the same MDX with `@mdx-js/mdx` and a remark plugin that collects JSX elements and headings (`lib/content/mdx-analysis.ts`), so a lesson that compiles for the page is the lesson the validator checked.
+
+### Arithmetic is wrapped LTR automatically
+In an RTL paragraph the bidi algorithm reverses `100 × 10.10 = 1,010`. `lib/content/remark-ltr-math.ts` wraps every arithmetic run (two or more numbers joined by operators) in `<Num>` at compile time; `components/lesson/ltr-text.tsx` does the same for quiz, card and exercise strings. Single numbers stay as the author wrote them (`<Num>` by hand, per the spec). Rejected: asking authors to wrap every expression by hand (the reference lessons do not).
+
+### The curriculum is code
+`lib/content/curriculum.ts` holds all 74 lessons, stage goals, weeks and gate requirements from `docs/02-CURRICULUM.md`. Lesson files are checked against it (id, stage, module, order, ⏱ flag). The roadmap shows unwritten lessons as "עוד לא נכתב"; unlock rules in `lib/learner/unlock.ts` are pure and unit-tested. Gate requirements that later phases deliver (chart drill, hand sizing, strategy card…) are `kind: "later"` with the phase number, so the gate screen already shows the full checklist.
+
+### Exercise presets are JSON files
+`<Widget name="Sort" preset="s0-l2-trader-or-investor" />` reads `content/exercises/<preset>.json` (zod discriminated union over Sort, Match, TrueFalse, GuessReveal, ScenarioChoice). The validator checks that the preset exists, has the right type and belongs to the lesson. Rejected: inline JSX props in the MDX (unreadable for authors, unvalidatable).
+
+### Validator rules beyond the spec list
+Also errors: the seven body headings in order; `introduces` terms not wrapped in `<Term>`; `widgets` and `<Widget>` usage out of sync; more than two callouts; `<Figure>` without alt; `<Volatile>` in a non-volatile lesson; `Callout type` outside warn/tip/note. Word count 500–900 is a warning only (both reference lessons are under 500 by this count). Fixtures: `tests/fixtures/content-broken/`.
+
+### Leitner details
+Intervals 1, 2, 4, 8, 16 days for boxes 1–5. A new card enters box 1 **due today** so it is reviewed in the same session the lesson was completed. Wrong → box 1, due tomorrow, `lapses + 1`. Dates are `YYYY-MM-DD` strings in the learner's calendar: the client sends its local date, the server never guesses a time zone. Calendar statistics computed on the server (week of the weekly goal, streak) use `Asia/Jerusalem`; weeks start on Sunday.
+
+### Quiz and exam scoring is server-side
+The client shows instant feedback from the quiz JSON it already has, but `submitLessonQuiz` and `submitGateExam` re-score on the server from the content files, write `quiz_attempts`, and only then mark `lesson_progress.completed` / `stage_gates`. The stage exam bank (`lib/learner/bank.ts`) is `server-only`; the page sends the client a draw without answers, seeded by the attempt count so each retry differs.
+
+### Weeks remaining
+`estimateWeeksLeft`: remaining lesson minutes × (110 ÷ 50), divided by the learner's weekly goal (a typical 110-minute week holds 50 minutes of lessons). Unwritten lessons count 20 minutes.
+
+### Gate evidence upload uses the `journal` bucket
+Migration `20261004160000_journal_bucket.sql` creates the private bucket from `docs/05-DATA-MODEL.md` with per-user folder policies (first path segment = `auth.uid()`), 5 MB, PNG/JPEG/WebP. Gate screenshots go to `<user_id>/gates/s<stage>/…`; journal trades will use `<user_id>/<trade_id>.png`. The server action records only paths inside the caller's own folder.
+
+### Stage 0 glossary terms
+Stage 0 introduces nine everyday-level terms (`asset`, `trader`, `investor`, `day-trading`, `emergency-fund`, `learning-budget`, `trading-arena`, `binary-options`, `signal-group`) so later lessons can say "סוחר" without re-explaining. `content/glossary.json` was created from the seed plus these.
+
+### Stage 0 content review
+Five lessons went through fact-checker → lesson-writer → quiz-author → beginner-reviewer (two rounds each). The fact-checker could not open any primary page from this cloud session (network policy): s0-l3 figures were cross-checked from search extracts of the primary papers; s0-l5 regulatory facts are stated in general terms only. Both still need one read of the source URLs from Reuven's machine (listed in the phase report). s0-l3 is `volatile: true` because of the ESMA disclosure rule.
+
+### Dev previews instead of `/dev/shell`
+`app/dev/*` renders every Phase 1 screen with fixed mock state (`app/dev/mock.ts`, `?scenario=`), 404 in production. The Playwright suite runs against them; the signed-in routes are covered by unit tests of the pure logic and by hand.
+
+### UI primitives written by hand
+`ui.shadcn.com` is blocked by the cloud network policy, so `popover`, `progress`, `badge` and `textarea` were written directly on Base UI / Tailwind in the same style as the generated components. They can be replaced by `npx shadcn add` later.

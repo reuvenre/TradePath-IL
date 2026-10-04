@@ -1,0 +1,9 @@
+{
+  "lessonId": "s1-m2-l2",
+  "questions": [
+    { "id": "q1", "type": "single", "prompt": "?", "options": ["a", "b", "c", "d"], "answer": 0, "explanation": "x", "objective": 0 },
+    { "id": "q2", "type": "single", "prompt": "?", "options": ["a", "b", "c", "d"], "answer": 0, "explanation": "x", "objective": 0 },
+    { "id": "q3", "type": "single", "prompt": "?", "options": ["a", "b", "c", "d"], "answer": 0, "explanation": "x", "objective": 0 },
+    { "id": "q4", "type": "single", "prompt": "?", "options": ["a", "b", "c", "d"], "answer": 0, "explanation": "x", "objective": 0 }
+  ]
+}

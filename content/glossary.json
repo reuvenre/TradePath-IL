@@ -1,0 +1,408 @@
+[
+  {
+    "id": "asset",
+    "he": "נכס",
+    "en": "Asset",
+    "short": "משהו שאפשר לקנות ולמכור ושיש לו מחיר שמשתנה: חלק בחברה, מטבע של מדינה, סחורה כמו זהב.",
+    "introducedIn": "s0-l2"
+  },
+  {
+    "id": "trader",
+    "he": "סוחר",
+    "en": "Trader",
+    "short": "מי שקונה ומוכר נכסים לעיתים קרובות, כדי להרוויח משינויי המחיר בטווח של ימים או שבועות.",
+    "introducedIn": "s0-l2"
+  },
+  {
+    "id": "investor",
+    "he": "משקיע",
+    "en": "Investor",
+    "short": "מי שקונה נכס ומחזיק בו שנים, כדי להרוויח מהצמיחה שלו ומהרווחים שהוא מחלק.",
+    "introducedIn": "s0-l2"
+  },
+  {
+    "id": "day-trading",
+    "he": "מסחר יומי",
+    "en": "Day Trading",
+    "short": "קנייה ומכירה של אותו נכס בתוך יום אחד, בלי להחזיק אותו ללילה.",
+    "introducedIn": "s0-l3"
+  },
+  {
+    "id": "emergency-fund",
+    "he": "קרן חירום",
+    "en": "Emergency Fund",
+    "short": "כסף שמור בצד לכמה חודשים של הוצאות, למקרה של אובדן הכנסה או הוצאה גדולה לא צפויה.",
+    "introducedIn": "s0-l4"
+  },
+  {
+    "id": "learning-budget",
+    "he": "סכום לימוד",
+    "en": "Learning Budget",
+    "short": "סכום שקבעת מראש שמותר לך להפסיד בזמן שאתה לומד לסחור, בלי שזה ישנה את חייך.",
+    "introducedIn": "s0-l4"
+  },
+  {
+    "id": "trading-arena",
+    "he": "זירת סוחר",
+    "en": "Trading Arena",
+    "short": "פלטפורמת מסחר שהיא עצמה הצד השני בעסקאות של הלקוחות שלה; בישראל היא חייבת רישיון מרשות ניירות ערך.",
+    "introducedIn": "s0-l5"
+  },
+  {
+    "id": "binary-options",
+    "he": "אופציות בינאריות",
+    "en": "Binary Options",
+    "short": "הימור על כיוון המחיר בפרק זמן קצר: או שמקבלים סכום קבוע או שמפסידים את כל הסכום. חברה ישראלית אסור לה להציע אותן לאף אחד.",
+    "introducedIn": "s0-l5"
+  },
+  {
+    "id": "signal-group",
+    "he": "קבוצת איתותים",
+    "en": "Signal Group",
+    "short": "קבוצה בוואטסאפ או בטלגרם שבה מישהו אומר לאחרים מה לקנות ומתי, לרוב בתשלום.",
+    "introducedIn": "s0-l5"
+  },
+  {
+    "id": "market",
+    "he": "שוק",
+    "en": "Market",
+    "short": "מקום, פיזי או דיגיטלי, שבו קונים ומוכרים נפגשים.",
+    "introducedIn": "s1-m1-l1"
+  },
+  {
+    "id": "order",
+    "he": "פקודה",
+    "en": "Order",
+    "short": "הוראה לקנות או למכור כמות מסוימת.",
+    "introducedIn": "s1-m1-l1"
+  },
+  {
+    "id": "order-book",
+    "he": "ספר פקודות",
+    "en": "Order Book",
+    "short": "הרשימה של כל מי שמחכה לקנות או למכור, ובאיזה מחיר.",
+    "introducedIn": "s1-m1-l1"
+  },
+  {
+    "id": "price",
+    "he": "מחיר",
+    "en": "Price",
+    "short": "הסכום שבו בוצעה העסקה האחרונה.",
+    "introducedIn": "s1-m1-l1"
+  },
+  {
+    "id": "stock",
+    "he": "מניה",
+    "en": "Stock",
+    "short": "חלק קטן בבעלות על חברה.",
+    "introducedIn": "s1-m1-l2"
+  },
+  {
+    "id": "dividend",
+    "he": "דיבידנד",
+    "en": "Dividend",
+    "short": "חלק מרווחי החברה שמחולק לבעלי המניות.",
+    "introducedIn": "s1-m1-l2"
+  },
+  {
+    "id": "index",
+    "he": "מדד",
+    "en": "Index",
+    "short": "מספר אחד שמסכם את המחירים של קבוצת מניות.",
+    "introducedIn": "s1-m1-l3"
+  },
+  {
+    "id": "etf",
+    "he": "קרן סל",
+    "en": "ETF",
+    "short": "מוצר שנסחר כמו מניה ומחזיק סל שלם של נכסים, בדרך כלל לפי מדד.",
+    "introducedIn": "s1-m1-l3"
+  },
+  {
+    "id": "interest-rate",
+    "he": "ריבית",
+    "en": "Interest Rate",
+    "short": "המחיר של כסף: כמה משלמים על הלוואה או מקבלים על חיסכון.",
+    "introducedIn": "s1-m1-l4"
+  },
+  {
+    "id": "bond",
+    "he": "אגרת חוב (אג\"ח)",
+    "en": "Bond",
+    "short": "הלוואה שאתה נותן לחברה או למדינה, והיא מחזירה אותה עם ריבית.",
+    "introducedIn": "s1-m1-l4"
+  },
+  {
+    "id": "forex",
+    "he": "מט\"ח",
+    "en": "Forex",
+    "short": "המסחר במטבעות של מדינות, מטבע אחד מול אחר.",
+    "introducedIn": "s1-m1-l5"
+  },
+  {
+    "id": "currency-pair",
+    "he": "זוג מטבעות",
+    "en": "Currency Pair",
+    "short": "שני מטבעות שמצוטטים זה מול זה, כמו EUR/USD.",
+    "introducedIn": "s1-m1-l5"
+  },
+  {
+    "id": "broker",
+    "he": "ברוקר",
+    "en": "Broker",
+    "short": "הגוף שמעביר את הפקודות שלך לשוק.",
+    "introducedIn": "s1-m2-l1"
+  },
+  {
+    "id": "bid",
+    "he": "מחיר ביקוש",
+    "en": "Bid",
+    "short": "המחיר הגבוה ביותר שקונה מוכן לשלם כרגע.",
+    "introducedIn": "s1-m2-l2"
+  },
+  {
+    "id": "ask",
+    "he": "מחיר היצע",
+    "en": "Ask",
+    "short": "המחיר הנמוך ביותר שמוכר מוכן לקבל כרגע.",
+    "introducedIn": "s1-m2-l2"
+  },
+  {
+    "id": "spread",
+    "he": "מרווח",
+    "en": "Spread",
+    "short": "ההפרש בין מחיר ההיצע למחיר הביקוש באותו רגע.",
+    "introducedIn": "s1-m2-l2"
+  },
+  {
+    "id": "liquidity",
+    "he": "נזילות",
+    "en": "Liquidity",
+    "short": "כמה קל לקנות או למכור מהר בלי להזיז את המחיר.",
+    "introducedIn": "s1-m2-l2"
+  },
+  {
+    "id": "market-order",
+    "he": "פקודת שוק",
+    "en": "Market Order",
+    "short": "פקודה לקנות או למכור מיד, במחיר הטוב ביותר שקיים עכשיו.",
+    "introducedIn": "s1-m2-l3"
+  },
+  {
+    "id": "limit-order",
+    "he": "פקודת לימיט",
+    "en": "Limit Order",
+    "short": "פקודה לקנות או למכור רק במחיר שקבעת, או טוב ממנו.",
+    "introducedIn": "s1-m2-l3"
+  },
+  {
+    "id": "stop-order",
+    "he": "פקודת סטופ",
+    "en": "Stop Order",
+    "short": "פקודה שמתעוררת רק כשהמחיר מגיע לרמה שקבעת.",
+    "introducedIn": "s1-m2-l4"
+  },
+  {
+    "id": "position",
+    "he": "פוזיציה",
+    "en": "Position",
+    "short": "עסקה פתוחה: נכס שקנית או מכרת ועדיין לא סגרת.",
+    "introducedIn": "s1-m2-l5"
+  },
+  {
+    "id": "long",
+    "he": "לונג",
+    "en": "Long",
+    "short": "קנייה בציפייה שהמחיר יעלה.",
+    "introducedIn": "s1-m2-l5"
+  },
+  {
+    "id": "short",
+    "he": "שורט",
+    "en": "Short",
+    "short": "מכירה של נכס שאינו שלך בציפייה שהמחיר ירד, כדי לקנות אותו בחזרה בזול.",
+    "introducedIn": "s1-m2-l5"
+  },
+  {
+    "id": "commission",
+    "he": "עמלה",
+    "en": "Commission",
+    "short": "תשלום לברוקר על ביצוע עסקה.",
+    "introducedIn": "s1-m2-l6"
+  },
+  {
+    "id": "leverage",
+    "he": "מינוף",
+    "en": "Leverage",
+    "short": "מסחר בסכום גדול מהכסף שיש לך בחשבון, בעזרת הלוואה מהברוקר.",
+    "introducedIn": "s1-m3-l1"
+  },
+  {
+    "id": "margin",
+    "he": "מרג'ין (ביטחונות)",
+    "en": "Margin",
+    "short": "הכסף שלך שהברוקר מחזיק כערבון לפוזיציה ממונפת.",
+    "introducedIn": "s1-m3-l1"
+  },
+  {
+    "id": "margin-call",
+    "he": "קריאה לביטחונות",
+    "en": "Margin Call",
+    "short": "דרישה מהברוקר להוסיף כסף, ואם לא תוסיף הוא יסגור לך פוזיציות.",
+    "introducedIn": "s1-m3-l1"
+  },
+  {
+    "id": "cfd",
+    "he": "חוזה הפרשים",
+    "en": "CFD",
+    "short": "הסכם עם הברוקר על הפרש המחיר של נכס, בלי להחזיק את הנכס עצמו.",
+    "introducedIn": "s1-m3-l2"
+  },
+  {
+    "id": "capital-gains-tax",
+    "he": "מס רווחי הון",
+    "en": "Capital Gains Tax",
+    "short": "מס על הרווח ממכירת נכס במחיר גבוה ממחיר הקנייה.",
+    "introducedIn": "s1-m3-l3"
+  },
+  {
+    "id": "timeframe",
+    "he": "טווח זמן",
+    "en": "Timeframe",
+    "short": "פרק הזמן שכל נקודה או נר בגרף מייצגים.",
+    "introducedIn": "s2-m1-l1"
+  },
+  {
+    "id": "candlestick",
+    "he": "נר יפני",
+    "en": "Candlestick",
+    "short": "צורה אחת שמראה פתיחה, סגירה, גבוה ונמוך של פרק זמן.",
+    "introducedIn": "s2-m1-l2"
+  },
+  {
+    "id": "volume",
+    "he": "נפח מסחר",
+    "en": "Volume",
+    "short": "כמה יחידות נסחרו בפרק זמן.",
+    "introducedIn": "s2-m1-l3"
+  },
+  {
+    "id": "trend",
+    "he": "מגמה",
+    "en": "Trend",
+    "short": "הכיוון הכללי שבו המחיר נע לאורך זמן.",
+    "introducedIn": "s2-m1-l4"
+  },
+  {
+    "id": "support",
+    "he": "תמיכה",
+    "en": "Support",
+    "short": "אזור מחיר שבו ירידות נעצרו בעבר.",
+    "introducedIn": "s2-m2-l1"
+  },
+  {
+    "id": "resistance",
+    "he": "התנגדות",
+    "en": "Resistance",
+    "short": "אזור מחיר שבו עליות נעצרו בעבר.",
+    "introducedIn": "s2-m2-l1"
+  },
+  {
+    "id": "breakout",
+    "he": "פריצה",
+    "en": "Breakout",
+    "short": "מעבר של המחיר אל מעבר לרמה שעצרה אותו קודם.",
+    "introducedIn": "s2-m2-l3"
+  },
+  {
+    "id": "moving-average",
+    "he": "ממוצע נע",
+    "en": "Moving Average",
+    "short": "ממוצע המחירים של מספר הנרות האחרונים, שמתעדכן עם כל נר חדש.",
+    "introducedIn": "s2-m4-l1"
+  },
+  {
+    "id": "rsi",
+    "he": "מדד העוצמה היחסית",
+    "en": "RSI",
+    "short": "מספר בין 0 ל-100 שמשווה את עוצמת העליות האחרונות לעוצמת הירידות.",
+    "introducedIn": "s2-m4-l2"
+  },
+  {
+    "id": "atr",
+    "he": "טווח ממוצע אמיתי",
+    "en": "ATR",
+    "short": "כמה הנכס זז בממוצע בנר אחד.",
+    "introducedIn": "s2-m4-l4"
+  },
+  {
+    "id": "volatility",
+    "he": "תנודתיות",
+    "en": "Volatility",
+    "short": "עד כמה המחיר קופץ למעלה ולמטה.",
+    "introducedIn": "s2-m4-l4"
+  },
+  {
+    "id": "risk-per-trade",
+    "he": "סיכון לעסקה",
+    "en": "Risk per Trade",
+    "short": "הסכום שתפסיד אם העסקה תיסגר בהפסד שתכננת מראש.",
+    "introducedIn": "s3-l2"
+  },
+  {
+    "id": "stop-loss",
+    "he": "סטופ לוס",
+    "en": "Stop-Loss",
+    "short": "מחיר שנקבע מראש, שבו יוצאים מעסקה מפסידה.",
+    "introducedIn": "s3-l3"
+  },
+  {
+    "id": "position-size",
+    "he": "גודל פוזיציה",
+    "en": "Position Size",
+    "short": "כמה יחידות קונים או מוכרים בעסקה אחת.",
+    "introducedIn": "s3-l4"
+  },
+  {
+    "id": "pip",
+    "he": "פיפ",
+    "en": "Pip",
+    "short": "יחידת התזוזה המקובלת בזוג מטבעות, בדרך כלל הספרה הרביעית אחרי הנקודה.",
+    "introducedIn": "s3-l5"
+  },
+  {
+    "id": "lot",
+    "he": "לוט",
+    "en": "Lot",
+    "short": "יחידת כמות במט\"ח; לוט סטנדרטי הוא 100,000 יחידות.",
+    "introducedIn": "s3-l5"
+  },
+  {
+    "id": "r-multiple",
+    "he": "מכפיל R",
+    "en": "R-Multiple",
+    "short": "תוצאת עסקה ביחס לסכום שסיכנת בה.",
+    "introducedIn": "s3-l6"
+  },
+  {
+    "id": "expectancy",
+    "he": "תוחלת",
+    "en": "Expectancy",
+    "short": "כמה מרוויחים או מפסידים בממוצע לעסקה, לאורך הרבה עסקאות.",
+    "introducedIn": "s3-l7"
+  },
+  {
+    "id": "drawdown",
+    "he": "ירידת הון",
+    "en": "Drawdown",
+    "short": "הירידה מהשיא של החשבון עד הנקודה הנמוכה שאחריו.",
+    "introducedIn": "s3-l8"
+  },
+  {
+    "id": "slippage",
+    "he": "החלקה",
+    "en": "Slippage",
+    "short": "ההפרש בין המחיר שציפית לקבל למחיר שקיבלת בפועל.",
+    "introducedIn": "s3-l10"
+  }
+]

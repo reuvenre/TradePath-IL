@@ -1,0 +1,68 @@
+{
+  "id": "s0-l3-guess-the-odds",
+  "lessonId": "s0-l3",
+  "widget": "GuessReveal",
+  "instruction": "בכל שאלה, הזז את הסליידר למספר שאתה מנחש, ורק אז גלה את התשובה.",
+  "items": [
+    {
+      "id": "brazil",
+      "prompt": "מתוך מי שהתמידו יותר מ-300 ימי מסחר בברזיל, כמה אחוזים הפסידו כסף?",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "actual": 97,
+      "tolerance": 5,
+      "explanation": "מתוך 1,551 אנשים שהתמידו יותר מ-300 ימי מסחר, 97% הפסידו כסף. רק 1.1% מתוכם הרוויחו יותר משכר מינימום.",
+      "source": {
+        "title": "Chague, De-Losso, Giovannetti (SSRN)",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3423101"
+      }
+    },
+    {
+      "id": "esma",
+      "prompt": "ב-2018, כמה אחוזים מחשבונות הסוחרים הפרטיים ב-CFD באירופה הפסידו כסף? (CFD: מוצר שבו אתה מתערב עם החברה שמפעילה את תוכנת המסחר על כיוון המחיר, בלי לקנות את הנכס עצמו.)",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "actual": 82,
+      "tolerance": 8,
+      "explanation": "המספר האמיתי הוא טווח: הרגולטורים במדינות האיחוד מצאו 74% עד 89% חשבונות מפסידים, תלוי במדינה. 82 הוא בערך האמצע של הטווח. היום כל חברה שדרכה אנשים סוחרים באירופה חייבת לפרסם את האחוז שלה.",
+      "source": {
+        "title": "ESMA, הודעה לעיתונות 27.3.2018",
+        "url": "https://www.esma.europa.eu/node/84933"
+      }
+    },
+    {
+      "id": "barber-odean",
+      "prompt": "בארצות הברית, בכמה נקודות אחוז בשנה פיגרו הסוחרים הפעילים ביותר אחרי השוק?",
+      "unit": "נקודות אחוז",
+      "min": 0,
+      "max": 20,
+      "step": 0.5,
+      "actual": 6.5,
+      "tolerance": 1.5,
+      "explanation": "החמישית שסחרה הכי הרבה הרוויחה 11.4% בשנה, בעוד השוק עלה 17.9%. ההפרש: 17.9 − 11.4 = 6.5 נקודות אחוז בשנה.",
+      "source": {
+        "title": "Barber & Odean, Trading Is Hazardous to Your Wealth (2000)",
+        "url": "https://faculty.haas.berkeley.edu/odean/Papers%20current%20versions/Individual_Investor_Performance_Final.pdf"
+      }
+    },
+    {
+      "id": "taiwan",
+      "prompt": "בטייוואן בדקו את כל הסוחרים היומיים לאורך 15 שנים. כמה אחוזים מהם הרוויחו באופן עקבי, אחרי התשלומים על כל פעולה?",
+      "unit": "%",
+      "min": 0,
+      "max": 20,
+      "step": 0.5,
+      "actual": 1,
+      "tolerance": 1,
+      "explanation": "פחות מ-1%. מחקר קודם, על חצי שנה טיפוסית, מצא שפחות מ-20% הרוויחו אחרי התשלומים על כל פעולה, כלומר יותר מ-80% לא הרוויחו.",
+      "source": {
+        "title": "Barber, Lee, Liu, Odean — The Cross-Section of Speculator Skill (2014)",
+        "url": "https://www.escholarship.org/content/qt7k75v0qx/qt7k75v0qx.pdf"
+      }
+    }
+  ]
+}
