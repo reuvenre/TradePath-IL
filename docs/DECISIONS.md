@@ -65,3 +65,6 @@ Supabase's security advisor flagged the `SECURITY DEFINER` sign-up trigger funct
 
 ### Skills
 `scripts/install-skills.ps1` was not run in Phase 0; `.claude/skills/` does not exist yet. Reuven should run it and review each `SKILL.md` (see `docs/09-SKILLS.md`).
+
+### Playwright uses the preinstalled Chromium in cloud sessions
+Claude cloud sessions ship Chromium at `/opt/pw-browsers/chromium` and block `playwright install`; its build does not match the headless shell the pinned `@playwright/test` expects. `playwright.config.ts` points `launchOptions.executablePath` at that binary only when it exists (or at `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` if set), so local Windows runs are unchanged. Alternative rejected: pinning `@playwright/test` to the preinstalled build, which would drift as the cloud image updates.
