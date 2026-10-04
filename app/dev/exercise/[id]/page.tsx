@@ -8,7 +8,7 @@ export default async function DevExercisePage({ params }: { params: Promise<{ id
   const exercise = readExercise(id);
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="text-2xl font-semibold">{exercise.widget}</h1>
+      <h1 className="text-2xl font-semibold">{exercise.instruction}</h1>
       <ExerciseEngine exercise={exercise} persist={false} />
     </div>
   );

@@ -5,9 +5,14 @@ import type { Root } from "mdast";
 // joined by operators, optionally with % or a currency sign) in <Num>, which renders <bdi dir="ltr">.
 // Single numbers are left alone; lessons wrap those with <Num> by hand (docs/03-LESSON-SPEC.md).
 
+// A number may carry a thousands separator, decimals and a trailing %.
 const NUMBER = String.raw`\d[\d,]*(?:\.\d+)?%?`;
-const OP = String.raw`\s*[×x\*÷/+\-−–=≈:]\s*`;
-export const ARITHMETIC = new RegExp(`(?:[−-]\\s*)?${NUMBER}(?:${OP}(?:[−-]\\s*)?${NUMBER})+`, "g");
+// Operators may have spaces around them but never a line break; ":" only as a ratio glued to digits (1:10),
+// so a label colon ("הסיכון הוא 1%:") never pulls the next line into the island.
+const OP = String.raw`(?:[ \t]*[×x\*÷/+\-−–=≈][ \t]*|:(?=\d))`;
+// A leading minus must not be the Hebrew prefix hyphen ("ב-10.10"), so it may not follow a Hebrew letter.
+const LEAD = String.raw`(?:(?<![\u0590-\u05FF])[−-][ \t]*)?`;
+export const ARITHMETIC = new RegExp(`${LEAD}${NUMBER}(?:${OP}(?:[−-][ \t]*)?${NUMBER})+`, "g");
 
 interface TextNode {
   type: "text";

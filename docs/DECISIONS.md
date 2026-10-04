@@ -112,3 +112,6 @@ Five lessons went through fact-checker → lesson-writer → quiz-author → beg
 
 ### UI primitives written by hand
 `ui.shadcn.com` is blocked by the cloud network policy, so `popover`, `progress`, `badge` and `textarea` were written directly on Base UI / Tailwind in the same style as the generated components. They can be replaced by `npx shadcn add` later.
+
+### RTL review outcomes
+`rtl-a11y-reviewer` rendered all Phase 1 screens at 375/1280 in both themes. Fixed from its report: the arithmetic regex no longer swallows the Hebrew prefix hyphen (`ב-10.10`) or a label colon before a line break, and `:` counts as an operator only inside a ratio (`1:10`); Hebrew units stay outside the LTR number island; whole Hebrew sentences are never wrapped in `<bdi dir="ltr">`; a wrong quiz answer uses a darker red (AA in light theme); stale-fact badges carry text, not only colour; `Button` sets `nativeButton={false}` when it renders a link. The glossary and source links inside running text stay inline (18px tall) under the inline-text exception.

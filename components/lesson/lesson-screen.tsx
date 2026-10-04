@@ -81,9 +81,8 @@ export function LessonScreen({ lesson, state, persist, quizHref, nextHref, nextL
           >
             <CalendarCheck className="mt-0.5 size-4 shrink-0" aria-hidden />
             <span>
-              {he.lesson.volatileBanner("")}
-              <bdi dir="ltr">{meta.verified_on}</bdi>
-              {stale ? ` ${he.lesson.volatileStale}` : ""}
+              {he.lesson.volatileBanner}
+              <bdi dir="ltr">{meta.verified_on}</bdi>.{stale ? ` ${he.lesson.volatileStale}` : ""}
             </span>
           </p>
         ) : null}

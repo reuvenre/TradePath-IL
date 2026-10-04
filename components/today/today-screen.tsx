@@ -86,9 +86,7 @@ export function TodayScreen({ unlocks, cardsDue, cardsTotal, week, nextStarted }
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-lg font-semibold">
-              <bdi dir="ltr">{he.today.weeklyGoalBody(week.minutesThisWeek, week.goal)}</bdi>
-            </p>
+            <p className="text-lg font-semibold">{he.today.weeklyGoalBody(week.minutesThisWeek, week.goal)}</p>
             <Progress value={pct} label={he.today.weeklyGoal} className="mt-2" />
             <p className="mt-3 text-sm">
               <span className="font-medium">{he.today.streak}:</span> {he.today.streakBody(week.streak)}

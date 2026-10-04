@@ -15,10 +15,13 @@ export function Volatile({ verifiedOn, today, children }: { verifiedOn: string; 
   return (
     <span className="inline">
       {children}{" "}
-      <Badge variant={stale ? "warn" : "muted"} className="align-middle" title={stale ? he.lesson.staleFact : undefined}>
+      <Badge variant={stale ? "warn" : "muted"} className="align-middle">
         <CalendarCheck aria-hidden />
-        {he.lesson.verifiedOn("")}
-        <bdi dir="ltr">{verifiedOn}</bdi>
+        <span>
+          {he.lesson.verifiedOn("")}
+          <bdi dir="ltr">{verifiedOn}</bdi>
+        </span>
+        {stale ? <span className="sr-only">. {he.lesson.staleFact}</span> : null}
       </Badge>
     </span>
   );

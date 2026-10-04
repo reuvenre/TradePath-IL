@@ -55,7 +55,7 @@ export function ExerciseEngine({ exercise, persist }: { exercise: Exercise; pers
     >
       <div className="flex items-start justify-between gap-3">
         <p className="text-sm text-muted-foreground">{exercise.instruction}</p>
-        <Button variant="ghost" size="sm" onClick={reset} aria-label={he.common.reset} className="shrink-0">
+        <Button variant="ghost" onClick={reset} aria-label={he.common.reset} className="min-h-11 shrink-0">
           <RotateCcw aria-hidden />
           {he.common.reset}
         </Button>
@@ -200,9 +200,8 @@ function GuessView({
       <p className="text-base leading-relaxed">{item.prompt}</p>
       <label htmlFor={inputId} className="mt-3 block text-sm font-medium text-muted-foreground">
         {he.exercise.guessLabel}:{" "}
-        <Num className="text-base font-semibold text-foreground">
-          {value} {item.unit}
-        </Num>
+        <Num className="text-base font-semibold text-foreground">{value}</Num>
+        {withUnit(item.unit)}
       </label>
       <div dir="ltr" className="mt-2">
         <input
@@ -218,10 +217,12 @@ function GuessView({
         />
         <div className="flex justify-between text-xs text-muted-foreground tabular-nums">
           <span>
-            {item.min} {item.unit}
+            <Num>{item.min}</Num>
+            {withUnit(item.unit)}
           </span>
           <span>
-            {item.max} {item.unit}
+            <Num>{item.max}</Num>
+            {withUnit(item.unit)}
           </span>
         </div>
       </div>
@@ -279,13 +280,14 @@ function GuessResult({ item, guess, close }: { item: Extract<EngineItem, { kind:
   return (
     <div>
       <p className="font-semibold">
-        {he.exercise.guessActual}: <Num>{item.actual} {item.unit}</Num>
+        {he.exercise.guessActual}: <Num>{item.actual}</Num>
+        {withUnit(item.unit)}
         {" · "}
-        {close ? he.exercise.guessClose : he.exercise.guessFar(`${Number(gap.toFixed(2))} ${item.unit}`)}
+        {close ? he.exercise.guessClose : he.exercise.guessFar(<><Num>{Number(gap.toFixed(2))}</Num>{withUnit(item.unit)}</>)}
       </p>
       <div dir="ltr" className="mt-2 space-y-1 text-xs tabular-nums">
-        <Bar label={he.exercise.guessLabel} width={pct(guess)} value={`${guess} ${item.unit}`} muted />
-        <Bar label={he.exercise.guessActual} width={pct(item.actual)} value={`${item.actual} ${item.unit}`} />
+        <Bar label={he.exercise.guessLabel} width={pct(guess)} value={<><Num>{guess}</Num>{withUnit(item.unit)}</>} muted />
+        <Bar label={he.exercise.guessActual} width={pct(item.actual)} value={<><Num>{item.actual}</Num>{withUnit(item.unit)}</>} />
       </div>
       {item.source ? (
         <a
@@ -302,7 +304,12 @@ function GuessResult({ item, guess, close }: { item: Extract<EngineItem, { kind:
   );
 }
 
-function Bar({ label, width, value, muted = false }: { label: string; width: string; value: string; muted?: boolean }) {
+/** "%" hugs its number; a Hebrew unit follows after a space, outside the LTR island. */
+function withUnit(unit: string): React.ReactNode {
+  return unit === "%" ? "%" : <span dir="rtl"> {unit}</span>;
+}
+
+function Bar({ label, width, value, muted = false }: { label: string; width: string; value: React.ReactNode; muted?: boolean }) {
   return (
     <div className="flex items-center gap-2">
       <span dir="rtl" className="w-24 shrink-0 text-end text-muted-foreground">
@@ -311,7 +318,9 @@ function Bar({ label, width, value, muted = false }: { label: string; width: str
       <div className="h-3 flex-1 overflow-hidden rounded bg-muted">
         <div className={cn("h-full rounded", muted ? "bg-muted-foreground/60" : "bg-primary")} style={{ width }} />
       </div>
-      <span className="w-20 shrink-0">{value}</span>
+      <span dir="rtl" className="w-24 shrink-0 text-start">
+        {value}
+      </span>
     </div>
   );
 }
@@ -323,7 +332,9 @@ function Summary({ items, verdicts }: { items: EngineItem[]; verdicts: Verdict[]
     <div className="mt-3 rounded-lg bg-muted/60 p-4" role="status">
       <p className="font-semibold">{he.exercise.resultTitle}</p>
       {isGuess && s.averageGap !== null ? (
-        <p className="mt-1">{he.exercise.guessAverageGap(`${Number(s.averageGap.toFixed(1))} ${items[0].kind === "guess" ? items[0].unit : ""}`)}</p>
+        <p className="mt-1">
+          {he.exercise.guessAverageGap(<><Num>{Number(s.averageGap.toFixed(1))}</Num>{withUnit(items[0].kind === "guess" ? items[0].unit : "")}</>)}
+        </p>
       ) : (
         <p className="mt-1">{he.exercise.score(s.correct, s.total)}</p>
       )}

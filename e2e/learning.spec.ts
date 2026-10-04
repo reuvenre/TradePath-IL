@@ -26,7 +26,7 @@ test.describe("lesson page", () => {
       expect(await arithmetic.count()).toBeGreaterThan(0);
 
       // The first glossary term opens a popover with its definition and a link to the glossary.
-      const term = page.locator("article button[aria-label^='הסבר למונח']").first();
+      const term = page.locator("article button[data-term]").first();
       await term.scrollIntoViewIfNeeded();
       await term.click();
       const popup = page.getByRole("dialog").or(page.locator("[data-popup-open]")).first();

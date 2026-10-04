@@ -58,10 +58,10 @@ export function CardReview({ cards, persist }: { cards: DueCard[]; persist: bool
   }
 
   return (
-    <section className="mx-auto max-w-xl" aria-live="polite">
+    <section className="mx-auto max-w-xl">
       <Progress value={(index / cards.length) * 100} label={he.cards.cardOf(index + 1, cards.length)} size="sm" />
       <div className="mt-2 flex items-center justify-between text-sm text-muted-foreground">
-        <span>{he.cards.cardOf(index + 1, cards.length)}</span>
+        <span aria-live="polite">{he.cards.cardOf(index + 1, cards.length)}</span>
         <Badge variant="muted">{he.cards.box(card.box)}</Badge>
       </div>
 
@@ -69,7 +69,7 @@ export function CardReview({ cards, persist }: { cards: DueCard[]; persist: bool
         <p className="text-xs text-muted-foreground">{he.cards.fromLesson(card.lessonTitle)}</p>
         <LtrText as="p" className="mt-3 text-xl leading-relaxed font-medium" text={card.front} />
         {showBack ? (
-          <div className="mt-5 border-t pt-4">
+          <div className="mt-5 border-t pt-4" aria-live="polite">
             <LtrText as="p" className="text-lg leading-relaxed" text={card.back} />
           </div>
         ) : null}

@@ -22,9 +22,10 @@ export function Term({ term, children }: { term: TermInfo | undefined; children:
     <Popover>
       <PopoverTrigger
         className="inline rounded-sm border-b border-dotted border-current px-0.5 font-medium text-primary underline-offset-2 outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
-        aria-label={`${he.glossary.termTooltip}: ${term.he}`}
+        data-term={term.id}
       >
         {children}
+        <span className="sr-only">, {he.glossary.termTooltip}</span>
       </PopoverTrigger>
       <PopoverContent>
         <p className="font-semibold">

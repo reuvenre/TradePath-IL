@@ -120,9 +120,7 @@ export function Quiz({ lessonId, lessonTitle, questions, persist, lessonHref, ne
             <p className="mt-2 text-muted-foreground">{he.quiz.saving}</p>
           ) : (
             <>
-              <p className="mt-2 text-3xl font-bold">
-                <bdi dir="ltr">{he.quiz.score(result!.correct, result!.total)}</bdi>
-              </p>
+              <p className="mt-2 text-3xl font-bold">{he.quiz.score(result!.correct, result!.total)}</p>
               <ul className="mt-3 flex gap-1" aria-label={he.quiz.resultTitle}>
                 {result!.perQuestion.map((ok, i) => (
                   <li
@@ -175,11 +173,15 @@ export function Quiz({ lessonId, lessonTitle, questions, persist, lessonHref, ne
                   <Button
                     key={optionIndex}
                     type="button"
-                    variant={checked ? (isAnswer ? "default" : isChosen ? "destructive" : "outline") : isChosen ? "secondary" : "outline"}
+                    variant={checked ? (isAnswer ? "default" : "outline") : isChosen ? "secondary" : "outline"}
                     disabled={checked}
                     aria-pressed={isChosen}
                     onClick={() => setChosen(optionIndex)}
-                    className={cn("h-auto min-h-11 justify-start gap-2 whitespace-normal py-2 text-start text-base", checked && isAnswer && "ring-2 ring-emerald-500/60")}
+                    className={cn(
+                      "h-auto min-h-11 justify-start gap-2 whitespace-normal py-2 text-start text-base",
+                      checked && isAnswer && "ring-2 ring-emerald-500/60",
+                      checked && !isAnswer && isChosen && "border-red-700/70 text-red-700 dark:border-red-300/70 dark:text-red-300",
+                    )}
                   >
                     {checked ? (
                       isAnswer ? (
