@@ -1,0 +1,16 @@
+{
+  "id": "bad-sort",
+  "lessonId": "s0-l2",
+  "widget": "Sort",
+  "instruction": "מיין.",
+  "buckets": [
+    { "id": "a", "label": "א" },
+    { "id": "b", "label": "ב" }
+  ],
+  "items": [
+    { "id": "1", "text": "x", "bucket": "a", "explanation": "y" },
+    { "id": "2", "text": "x", "bucket": "b", "explanation": "y" },
+    { "id": "3", "text": "x", "bucket": "a", "explanation": "y" },
+    { "id": "4", "text": "x", "bucket": "zzz", "explanation": "y" }
+  ]
+}

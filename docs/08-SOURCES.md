@@ -19,7 +19,8 @@ Trading education online goes stale fast. Three items below changed in 2026 alon
 | Capital losses offset capital gains in the same tax year, Israeli and foreign securities alike; carrying losses forward requires filing an annual return | s1-m3-l3 | same | Israel Tax Authority |
 | Israeli banks and brokers withhold the tax at source; with a foreign broker the investor must report and pay, and the capital-gains detail goes on form 1322 | s1-m3-l3, s6-l8 | https://www.meitav.co.il/trade/financial_info/stock-exchange-tax-return/ · https://financa.co.il/מילוי-דוח-שנתי-ומיסוי-עם-ברוקר-זר/ | Israel Tax Authority |
 | Running a "trading arena" (זירת סוחר: CFD and forex platforms dealing against clients) requires a licence from the Israel Securities Authority | s0-l5, s1-m2-l1, s1-m3-l2 | https://protocol.co.il/trading-floor/ | isa.gov.il list of licensed arenas |
-| Binary options are banned for Israeli clients of trading arenas | s0-l5 | https://protocol.co.il/יאסר-זירות-סוחר-אופציות-בינאריות-חול/ | isa.gov.il |
+| Binary options: ISA barred licensed arenas from offering them to Israeli clients (2016); Securities Law Amendment 66 (passed 23 Oct 2017) bars any Israeli-run arena from offering them to anyone, in Israel or abroad | s0-l5 | https://protocol.co.il/יאסר-זירות-סוחר-אופציות-בינאריות-חול/ · law PDF (not yet opened): https://fs.knesset.gov.il/20/law/20_ls2_390922.pdf | isa.gov.il, the law text |
+| Fraud red flags checklist (SEC) | s0-l5 | https://www.investor.gov/protect-your-investments/fraud/how-avoid-fraud/red-flags-investment-fraud-checklist (not yet opened from the cloud session) | Investor.gov |
 
 Not yet verified, needed for lessons: current ISA leverage caps for retail clients of trading arenas; TASE opening phases and exact pre-open times; current surtax threshold; typical Israeli bank vs broker commission ranges. `fact-checker` must find primary sources before s1-m3-l1, s1-m2-l6 and s1-m2-l7 are written.
 
@@ -35,10 +36,11 @@ Not yet verified, needed for lessons: current ISA leverage caps for retail clien
 
 | Fact | Used in | Found at | Confirm against |
 |---|---|---|---|
-| Brazil, equity index futures, 2013–2015: of day traders who persisted beyond 300 days, 97% lost money (Chague, De-Losso, Giovannetti) | s0-l3 | https://walnutinvest.com/stats/day-trading-statistics | The paper itself (SSRN) |
-| EU: national regulators' studies cited by ESMA in 2018 found 74–89% of retail CFD accounts lose money; CFD providers must display their own percentage | s0-l3, s1-m3-l2 | https://thortradecopier.com/blog/what-percentage-of-day-traders-lose-money | esma.europa.eu, March 2018 notice |
-| US households, Barber and Odean (2000): the most active traders trailed the market by about 6.5 percentage points a year | s0-l3, s5-l3 | https://journalplus.co/blog/how-many-traders-actually-make-money | The paper ("Trading Is Hazardous to Your Wealth") |
-| Taiwan, Barber, Lee, Liu, Odean: more than 80% of day traders lose in a typical six months; under 1% are reliably profitable after fees | s0-l3 | https://walnutinvest.com/stats/day-trading-statistics | The papers |
+| Brazil, mini-Ibovespa index futures, 2013–2015: 19,646 started; 1,551 persisted beyond 300 trading days; of those 97% lost money and 1.1% earned more than minimum wage (Chague, De-Losso, Giovannetti, "Day Trading for a Living?") | s0-l3 | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3423101 (abstract read via search extract 2026-10-04; direct fetch blocked in the cloud session) | The paper itself (SSRN) |
+| EU: national regulators' studies cited by ESMA in 2018 found 74–89% of retail CFD accounts lose money; CFD providers must display their own percentage | s0-l3, s1-m3-l2 | https://www.esma.europa.eu/node/84933 · https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018X0601(02) | esma.europa.eu, March 2018 notice |
+| US households, Barber and Odean (2000): 66,465 households 1991–1996; the most active fifth earned 11.4% a year vs 17.9% for the market, 6.5 points less | s0-l3, s5-l3 | https://faculty.haas.berkeley.edu/odean/Papers%20current%20versions/Individual_Investor_Performance_Final.pdf | The paper ("Trading Is Hazardous to Your Wealth") |
+| Taiwan (a), Barber, Lee, Liu, Odean, "Do Individual Day Traders Make Money?" (2004, TSE 1995–1999): fewer than 20% of day traders profit net of costs in a typical six months | s0-l3 | https://faculty.haas.berkeley.edu/odean/papers/Day%20Traders/Day%20Trade%20040330.pdf | The paper |
+| Taiwan (b), Barber, Lee, Liu, Odean, "The Cross-Section of Speculator Skill" (J. Financial Markets 2014, TSE 1992–2006): less than 1% of day traders predictably profitable after fees | s0-l3 | https://www.escholarship.org/content/qt7k75v0qx/qt7k75v0qx.pdf | The paper |
 
 ### Tools for the build
 

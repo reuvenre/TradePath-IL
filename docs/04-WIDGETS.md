@@ -19,6 +19,14 @@ Every widget: works at 375px by touch; has a `preset` prop so a lesson can pin i
 
 Chart conventions: time left to right; up candles and down candles differ by colour **and** fill (hollow/solid) so colour is not the only signal; prices LTR; the TradingView attribution stays visible.
 
+## Stage 0 widgets (Phase 1)
+
+| Widget | Lesson | The learner does | Accept when |
+|---|---|---|---|
+| SystemTour | s0-l1 | Steps through the six screens of the system with one sentence each | Reachable by keyboard; works at 375px |
+| Sort / GuessReveal / ScenarioChoice (ExerciseEngine presets in `content/exercises/`) | s0-l2, s0-l3, s0-l5 | Sorts 8 scenarios; guesses four research figures before revealing them; classifies 10 fictional ads | Every item shows its explanation; score saved to `drill_attempts` |
+| LearningBudget | s0-l4 | Enters income, expenses, liquid savings and emergency-fund months; sees the maximum learning budget with the five arithmetic steps | `lib/finance/learning-budget.ts` vectors: 15,000 / 10,000 / 70,000 / 4 months → 15,000 (rebuild cap binds); savings 35,000 → 0 |
+
 ## Stage 1 widgets
 
 | Widget | Lesson | The learner does | Accept when |
